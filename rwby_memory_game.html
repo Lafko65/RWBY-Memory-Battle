@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWBY Memory Battle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1 class="title">RWBY MEMORY BATTLE</h1>
+        <p class="subtitle">Encuentra todos los pares de cazadores</p>
+    </div>
+
+    <div class="game-info">
+        <div class="info-card">
+            <div class="info-label">Movimientos</div>
+            <div class="info-value" id="moves">0</div>
+        </div>
+        <div class="info-card">
+            <div class="info-label">Tiempo</div>
+            <div class="info-value" id="timer">0:00</div>
+        </div>
+        <div class="info-card">
+            <div class="info-label">Pares</div>
+            <div class="info-value" id="pairs">0/4</div>
+        </div>
+    </div>
+
+    <div class="difficulty-selector">
+        <button class="difficulty-btn easy active" onclick="setDifficulty('easy')">Fácil</button>
+        <button class="difficulty-btn medium" onclick="setDifficulty('medium')">Medio</button>
+        <button class="difficulty-btn hard" onclick="setDifficulty('hard')">Difícil</button>
+    </div>
+
+    <div class="game-board easy" id="gameBoard"></div>
+
+    <button class="reset-btn" onclick="resetGame()">🔄 Reiniciar Juego</button>
+
+    <div class="modal" id="winModal">
+        <div class="modal-content">
+            <h2 class="modal-title">🎉 ¡VICTORIA! 🎉</h2>
+            <div class="modal-stats">
+                <p>Has completado el desafío</p>
+                <p><strong>Movimientos:</strong> <span id="finalMoves"></span></p>
+                <p><strong>Tiempo:</strong> <span id="finalTime"></span></p>
+            </div>
+            <button class="modal-btn" onclick="closeModal()">Jugar de Nuevo</button>
+        </div>
+    </div>
+<script src="/script.js"></script>
+
+</body>
+</html>
